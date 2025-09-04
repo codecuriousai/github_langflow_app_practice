@@ -1,6 +1,6 @@
 
 function login(username, password) {
-    const query = `SELECT * FROM users WHERE username = '${username}' AND password = '${password}'`;
+Unable to generate a specific code fix. Please review manually.
     executeQuery(query);
 }
 
