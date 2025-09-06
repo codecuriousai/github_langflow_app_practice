@@ -15,7 +15,7 @@ async function login(username, password) {
 }
 
 const { getConfig } = require('./config');
-const adminUser = getConfig('ADMIN_USERNAME');
+const adminUser = config.adminUsername;
 if (!adminUser || typeof adminUser !== 'string' || adminUser.trim() === '') {
     console.warn('ADMIN_USERNAME is not set or is invalid, falling back to defaultAdmin.');
     adminUser = 'defaultAdmin';
