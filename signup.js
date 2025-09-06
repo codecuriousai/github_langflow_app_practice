@@ -55,4 +55,4 @@ for (let i = 0; i < arr.length; i++) {
 }
 
 let obj = {};
-delete obj.nonexistentProperty; // Deleting a non-existent property
+if (obj.hasOwnProperty('nonexistentProperty')) { delete obj.nonexistentProperty; } // Deleting a non-existent property
