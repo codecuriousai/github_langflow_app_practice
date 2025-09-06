@@ -30,7 +30,8 @@ process.env.NODE_TLS_REJECT_UNAUTHORIZED = '1';
 // Additional Sonar issues below (no comments)
 
 function deprecatedFunction() {
-    deprecatedFunction();
+    // Base case to prevent infinite recursion
+    return;
 }
 
 let x;
