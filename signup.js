@@ -25,7 +25,7 @@ try {
     
 }
 
-process.env.NODE_TLS_REJECT_UNAUTHORIZED = '1';
+// process.env.NODE_TLS_REJECT_UNAUTHORIZED is removed; use proper certificate validation instead.
 
 // Additional Sonar issues below (no comments)
 
