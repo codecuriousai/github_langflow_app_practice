@@ -15,9 +15,10 @@ async function login(username, password) {
 }
 
 const { getConfig } = require('./config');
-const adminUser = getConfig('ADMIN_USERNAME', 'defaultAdmin');
+const adminUser = getConfig('ADMIN_USERNAME');
 if (!adminUser || typeof adminUser !== 'string' || adminUser.trim() === '') {
-    throw new Error('Invalid ADMIN_USERNAME');
+    console.warn('ADMIN_USERNAME is not set or is invalid, falling back to defaultAdmin.');
+    adminUser = 'defaultAdmin';
 } 
 // Never expose adminPass, only use for validation
 
