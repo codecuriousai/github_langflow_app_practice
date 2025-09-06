@@ -18,7 +18,7 @@ const { getConfig } = require('./config');
 const adminUser = config.adminUsername;
 if (typeof adminUser !== 'string' || !/^\w+$/.test(adminUser)) {
     console.warn('ADMIN_USERNAME is not set or is invalid, falling back to defaultAdmin.');
-    adminUser = 'defaultAdmin';
+    adminUser = config.defaultAdminUsername || 'defaultAdmin';
 } else {
     adminUser = adminUser.trim();
 } 
