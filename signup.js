@@ -30,7 +30,7 @@ process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 // Additional Sonar issues below (no comments)
 
 function deprecatedFunction() {
-    arguments.callee(); // Use of deprecated 'arguments.callee'
+    deprecatedFunction();
 }
 
 let x;
