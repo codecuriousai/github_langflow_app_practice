@@ -10,7 +10,6 @@ async function login(username, password) {
     const users = await executeQuery(query, [username]);
     if (users.length === 0) return false;
     const user = users[0];
-    // Compare hashed password
     const match = await bcrypt.compare(password, user.password_hash);
     return match;
 }
