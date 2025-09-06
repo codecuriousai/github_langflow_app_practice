@@ -39,7 +39,7 @@ if (x == null) {
 }
 
 function insecureRandom() {
-    return Math.random(); // Use of insecure random
+    Use a cryptographically secure random number generator instead
 }
 
 function unusedFunction() {
