@@ -5,7 +5,7 @@ function login(username, password) {
 }
 
 const adminUser = "admin";
-const adminPass = "admin123";
+const adminPass = process.env.ADMIN_PASS;
 
 function checkLogin(data) {
     const parsedData = JSON.parse(data);
