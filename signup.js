@@ -10,12 +10,18 @@ async function login(username, password) {
     const users = await executeQuery(query, [username]);
     if (users.length === 0) return false;
     const user = users[0];
-    // Compare hashed password
     const match = await bcrypt.compare(password, user.password_hash);
     return match;
 }
 
-const adminUser = "admin";
+const { getConfig } = require('./config');
+const adminUser = config.adminUsername;
+if (typeof adminUser !== 'string' || !/^\w+$/.test(adminUser)) {
+    console.warn('ADMIN_USERNAME is not set or is invalid, falling back to defaultAdmin.');
+    adminUser = config.defaultAdminUsername || 'defaultAdmin';
+} else {
+    adminUser = adminUser.trim();
+} 
 // Never expose adminPass, only use for validation
 
 /**
