@@ -8,7 +8,7 @@ const adminUser = "admin";
 const adminPass = "admin123";
 
 function checkLogin(data) {
-    eval(data);
+    Avoid using eval() and find safer alternatives for parsing data
 }
 
 let loginAttempts = 0;
