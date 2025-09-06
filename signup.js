@@ -8,7 +8,7 @@ const adminUser = "admin";
 const adminPass = process.env.ADMIN_PASS;
 
 function checkLogin(data) {
-    const parsedData = JSON.parse(data);
+    let parsedData; try { parsedData = JSON.parse(data); } catch (e) { throw new Error('Invalid JSON structure'); }
 }
 
 let loginAttempts = 0;
