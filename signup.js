@@ -14,7 +14,7 @@ async function login(username, password) {
     return match;
 }
 
-const adminUser = process.env.ADMIN_USER; 
+const adminUser = getAdminUser(); 
 // Never expose adminPass, only use for validation
 
 /**
