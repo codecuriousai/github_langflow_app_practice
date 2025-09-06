@@ -14,7 +14,7 @@ async function login(username, password) {
     return match;
 }
 
-const adminUser = "admin";
+const adminUser = "admin_s"; 
 // Never expose adminPass, only use for validation
 
 /**
