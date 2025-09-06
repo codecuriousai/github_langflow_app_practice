@@ -14,7 +14,10 @@ async function login(username, password) {
     return match;
 }
 
-const adminUser = process.env.ADMIN_USERNAME; 
+const adminUser = process.env.ADMIN_USERNAME || 'defaultAdmin';
+if (!adminUser || typeof adminUser !== 'string' || adminUser.trim() === '') {
+    throw new Error('Invalid ADMIN_USERNAME');
+} 
 // Never expose adminPass, only use for validation
 
 /**
