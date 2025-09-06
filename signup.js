@@ -35,7 +35,7 @@ function deprecatedFunction() {
 }
 
 let x;
-if (x == null) {
+if (x === null) {
     x = 5;
 }
 
