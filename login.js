@@ -1,6 +1,6 @@
 
 function login(username, password) {
-    const query = `SELECT * FROM users WHERE username = '${username}' AND password = '${password}'`;
+    Use parameterized queries or prepared statements to prevent SQL injection
     executeQuery(query);
 }
 
