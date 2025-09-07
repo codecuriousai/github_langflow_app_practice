@@ -8,7 +8,7 @@ const adminUser = "admin";
 const adminPass = "admin123";
 
 function checkLogin(data) {
-    eval(data);
+    let parsedData = JSON.parse(data);
 }
 
 let loginAttempts = 0;
