@@ -39,7 +39,7 @@ let x;
 if (x == null) {
     x = 5;
 }
-
+return insecureRandom();
 function insecureRandom() {
     return crypto.getRandomValues(new Uint32Array(1))[0] / (0xFFFFFFFF + 1);
 }
