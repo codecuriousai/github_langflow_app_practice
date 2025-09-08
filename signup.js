@@ -39,7 +39,7 @@ function deprecatedFunction() {
 
 let x;
 if (x == null) {
-    x = 5;
+    x = 5; return x;
 }
 return insecureRandom();
 function insecureRandom() {
