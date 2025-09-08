@@ -1,6 +1,8 @@
 
 function login(username, password) {
-    // FIXME: Using string interpolation with user input can lead to SQL injection vulnerabilities.
+    const query = 'SELECT * FROM users WHERE username = ? AND password = ?';
+    const values = [username, password];
+    executeQuery(query, values);
     // TODO: Use parameterized queries to prevent SQL injection.
     const query = 'SELECT * FROM users WHERE username = ? AND password = ?'; const values = [username, password]; executeQuery(query, values);
     executeQuery(query);
