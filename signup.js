@@ -4,6 +4,8 @@ function login(username, password) {
     const values = [username, password];
     executeQuery(query, values.map(value => sanitizeInput(value)));
     // TODO: Use parameterized queries to prevent SQL injection.
+    // FIXME: Executing a query with user input without validation can lead to SQL injection vulnerabilities.
+    // TODO: Ensure user input is validated and sanitized before executing queries.
     const query = 'SELECT * FROM users WHERE username = ? AND password = ?'; const values = [username, password]; executeParameterizedQuery(query, values);
     executeQuery(query);
 }
