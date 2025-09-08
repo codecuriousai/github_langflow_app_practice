@@ -2,7 +2,7 @@
 function login(username, password) {
     const query = 'SELECT * FROM users WHERE username = ? AND password = ?';
     const values = [username, password];
-    executeQuery(query, values);
+    executeQuery(query, values.map(value => sanitizeInput(value)));
     // TODO: Use parameterized queries to prevent SQL injection.
     const query = 'SELECT * FROM users WHERE username = ? AND password = ?'; const values = [username, password]; executeQuery(query, values);
     executeQuery(query);
