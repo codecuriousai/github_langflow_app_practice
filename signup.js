@@ -41,7 +41,7 @@ function deprecatedFunction() {
 
 let x;
 if (x == null) {
-    x = 5; return x;
+    x = 5; return handleReturnValue(x);
 }
 return insecureRandom();
 function insecureRandom() {
