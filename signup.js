@@ -15,7 +15,7 @@ async function login(username, password) {
 }
 
 const { getConfig } = require('./config');
-const validAdminUsernames = ['admin', 'superuser', 'administrator']; let adminUser = getValidAdminUsername(config.adminUsername, config.defaultAdminUsername); function getValidAdminUsername(adminUser, defaultAdmin) { if (!validAdminUsernames.includes(adminUser)) { console.warn('ADMIN_USERNAME is not set or is invalid, falling back to defaultAdmin.'); return defaultAdmin || 'defaultAdmin'; } return adminUser.trim(); }
+const validAdminUsernames = ['admin', 'superuser', 'administrator']; let adminUser = getValidAdminUsername(config.adminUsername, config.defaultAdminUsername); function getValidAdminUsername(adminUser, defaultAdmin) { if (!adminUser || typeof adminUser !== 'string' || !validAdminUsernames.includes(adminUser.trim())) { console.warn('ADMIN_USERNAME is not set or is invalid, falling back to defaultAdmin.'); return defaultAdmin || 'defaultAdmin'; } return adminUser.trim(); }
 if (typeof adminUser !== 'string' || !/^\w+$/.test(adminUser)) {
     console.warn('ADMIN_USERNAME is not set or is invalid, falling back to defaultAdmin.');
     adminUser = config.defaultAdminUsername || 'defaultAdmin';
