@@ -1,14 +1,14 @@
 
 const query = 'SELECT * FROM users WHERE name = ?'; executeQuery(query, [userInput]);
-const query = `SELECT * FROM users WHERE name = '${userInput}'`;
+const query = 'SELECT * FROM users WHERE name = ?'; executeQuery(query, [userInput]);
 executeQuery(query);
 
-const password = "SuperSecret123";
+const password = process.env.SECRET_PASSWORD;
 
 const code = "console.log('Hello World')";
-new Function(code)();
+eval(code);
 
-Remove unused variables to improve code clarity.
+// const password = "SuperSecret123";
 
 console.log("Debug info");
 
