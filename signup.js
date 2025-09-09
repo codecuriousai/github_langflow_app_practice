@@ -6,7 +6,7 @@ executeQuery(query);
 const password = "SuperSecret123";
 
 const code = "console.log('Hello World')";
-eval(code);
+new Function(code)();
 
 let unusedVar = 42;
 
