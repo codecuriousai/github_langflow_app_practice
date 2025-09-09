@@ -8,7 +8,7 @@ const password = "SuperSecret123";
 const code = "console.log('Hello World')";
 new Function(code)();
 
-let unusedVar = 42;
+Remove unused variables to improve code clarity.
 
 console.log("Debug info");
 
