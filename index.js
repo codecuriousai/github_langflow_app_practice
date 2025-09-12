@@ -17,6 +17,10 @@ formEl.addEventListener("submit", (event) => {
   toDoList();
 });
 
+/**
+ * Adds a task to the to-do list.
+ * @param {Object} task - The task object.
+ */
 function toDoList(task) {
   let newTask = inputEl.value;
   if (task) {
