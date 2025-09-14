@@ -28,6 +28,7 @@ function toDoList(task) {
     liEl.classList.add("checked");
   }
   liEl.innerText = newTask;
+  inputEl.value = '';
   ulEl.appendChild(liEl);
   inputEl.value = "";
   const checkBtnEl = document.createElement("div");
