@@ -4,7 +4,13 @@ const inputEl = document.querySelector(".input");
 
 const ulEl = document.querySelector(".list");
 
-let list = JSON.parse(localStorage.getItem("list"));
+let list;
+try {
+  list = JSON.parse(localStorage.getItem("list"));
+} catch (e) {
+  console.error("Failed to parse list from localStorage", e);
+  list = [];
+}
 if (list) {
   list.forEach((task) => {
     toDoList(task);
@@ -27,7 +33,7 @@ function toDoList(task) {
   if (task && task.checked) {
     liEl.classList.add("checked");
   }
-  liEl.innerText = newTask;
+  liEl.innerText = newTask.replace(/</g, "&lt;").replace(/>/g, "&gt;");
   ulEl.appendChild(liEl);
   inputEl.value = "";
   const checkBtnEl = document.createElement("div");
