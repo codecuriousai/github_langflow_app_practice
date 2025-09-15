@@ -2,7 +2,7 @@ const formEl = document.querySelector(".form");
 
 const inputEl = document.querySelector(".input");
 
-const ulEl = document.querySelector(".list");
+const ulElement = document.querySelector(".list");
 
 let list = JSON.parse(localStorage.getItem("list"));
 if (list) {
@@ -18,7 +18,8 @@ formEl.addEventListener("submit", (event) => {
 });
 
 function toDoList(task) {
-  let newTask = inputEl.value;
+  let newTask = inputEl.value.trim();
+if (!newTask) return;
   if (task) {
     newTask = task.name;
   }
@@ -43,14 +44,14 @@ function toDoList(task) {
 
   checkBtnEl.addEventListener("click", () => {
     liEl.classList.toggle("checked");
-    updateLocalStorage();
+    debounce(updateLocalStorage, 300);
   });
 
   trashBtnEl.addEventListener("click", () => {
     liEl.remove();
-    updateLocalStorage();
+    debounce(updateLocalStorage, 300);
   });
-  updateLocalStorage();
+  debounce(updateLocalStorage, 300);
 }
 
 function updateLocalStorage() {
